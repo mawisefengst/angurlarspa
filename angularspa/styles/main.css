@@ -1,0 +1,99 @@
+body {
+  background: #fafafa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+div.hero-unit{
+  width: 600px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+h1{
+  text-transform: uppercase;
+  text-align: center;
+}
+
+
+ul.nav {
+  list-style: none;
+  background-color: #444;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+
+@media screen and (min-width: 650px) {
+
+  .nav li {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2em;
+    line-height: 40px;
+    text-align: left;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    border-bottom: 1px solid #888;
+    text-align: center;
+    transition: .3s background-color;
+  }
+
+  .nav a:hover {
+    background-color: #005f5f;
+  }
+
+  .nav a.active {
+    background-color: #aaa;
+    color: #444;
+    cursor: default;
+  }
+
+  /* Sub Menus */
+  .nav li li {
+    font-size: .8em;
+  }
+
+
+  .nav li {
+    width: 160px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+    display: inline-block;
+    margin-right: -4px;
+  }
+
+  .nav a {
+    border-bottom: none;
+  }
+
+  .nav > ul > li {
+    text-align: center;
+  }
+
+  .nav > ul > li > a {
+    padding-left: 0;
+  }
+
+  /* Sub Menus */
+  .nav li ul {
+    position: absolute;
+    display: none;
+    width: inherit;
+  }
+
+  .nav li:hover ul {
+    display: block;
+  }
+
+  .nav li ul li {
+    display: block;
+  }
+  
+}

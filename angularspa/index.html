@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>angularspa</title>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body>
+    <div class="hero-unit" ng-app="sportSystemApp">
+        <div ng-controller="initCtrl">
+            <ul class="nav">
+                <li ng-repeat="menu in parentMenuList">
+                  <a href="#{{menu.name | lowercase }}">{{menu.name}}</a>
+                  <ul class="nav">
+                    <li ng-repeat="menuChildren in childrenMenuList" ng-if="menuChildren.parentID == menu.id" >
+                      <a href="#{{menuChildren.name | lowercase  | removeSpaces}}">{{menuChildren.name}}</a>
+                    </li>
+                  </ul>
+                </li>
+            </ul>
+        </div>
+        <div ng-view=""></div>
+    </div>
+    
+    <script src="scripts/libs.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
