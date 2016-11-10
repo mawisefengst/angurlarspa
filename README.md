@@ -1,12 +1,12 @@
- "#metalPriceChartD3" 
+ "#angurlarspa" 
  
  +Please check live demo: https://metalpricechartd3.herokuapp.com/
 
 ```bash
 
-This is a metal prices chart within D3.js. With hourly updated fastmarket data service, this chart would follow latest trend of metal market around the world.
+This is a simple Single Page Application with Angular ngroute. 
+Menu content is from 3rd party API.  There's a proxy service to avoid cross domain issue.
+Place holder content is from lorem ipsum text.
  
 ```
 
-"# angurlarspa" 
-"# angurlarspa" 
