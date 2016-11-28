@@ -1,0 +1,43 @@
+
+	<div class="container rounded_table admin_loginbox" ng-app>
+
+		<form method="post" action="/admin" name="frm">
+
+			<h1>{{message}}</h1>
+
+			<div class="form-group">
+			   <label>Email</label><input type="email" name="email" ng-model="user.email" class="form-control" required/></input>
+			</div>
+
+			<div class="form-group has-error" ng-show="frm.email.$dirty && frm.email.$error.email">
+			  	Please enter a valid email
+			</div>
+
+			<div class="form-group has-error" ng-show="frm.email.$dirty && frm.email.$error.required">
+			  	Please enter your email
+			</div>
+
+			<div class="form-group ">
+				<label>Password</label><input type="text" class="form-control" ng-model="user.password" name="password" required/></input>
+			</div>	
+
+			<div class="form-group has-error" ng-show="frm.password.$dirty && frm.password.$error.required">
+			  	Please enter your password
+			</div>
+
+
+			<div class="form-group has-error">
+			  	{{{errorMessage}}}
+			</div>
+
+			<div class="form-group">
+				<input ng-disabled="frm.$invalid" type="submit" class="btn btn-primary" value="Login">
+			</div>	
+
+			<p>Please contact admin via <a href="mailto:mawisefeng@gmail.com">mawisefeng@gmail.com</a> for new user request</p>
+
+		</form>
+
+	</div>
+
+

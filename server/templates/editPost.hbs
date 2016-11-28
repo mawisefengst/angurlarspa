@@ -1,0 +1,101 @@
+<div class="container rounded_table admin_new_box" ng-app="editApp">
+
+	<form method="post" action="/post/edit/{{post.cid}}" name="frm" ng-controller="editCtrl">
+
+		<h1>{{message}}</h1>
+
+		<div class="form-group">
+
+		   <label>Title</label>
+		   <input type="text" name="title" ng-model="title" class="form-control" required></input>
+
+		</div>
+
+		<div class="form-group has-error" ng-show="frm.title.$dirty && frm.title.$error.required">
+			  	Please enter your title
+		</div>
+
+		<div class="form-group">
+			<label>Content</label>
+
+				
+			<div id="texteditor_wrapper" class="advertorial_editor" data-width="758" data-height="475" data-textareaid="texteditor" data-maxlength="320">
+
+				<div class="texteditor">
+
+					<textarea id="texteditor" row="10" class="form-control" name="content" required>{{{post.content}}}</textarea>
+
+				</div>
+
+			</div>
+				
+		</div>	
+
+		<div class="form-group has-error" ng-show="frm.content.$dirty && frm.content.$error.required">
+			  	Please enter your content
+		</div>
+
+		<input ng-disabled="frm.$invalid" type="submit" class="btn btn-primary" value="Submit">
+
+	</form>
+
+</div>
+
+
+<script type="text/javascript" src="http://people.staging.secondthought.com/people/nativeadstool/public/assets/nativetemplates/javascripts/jquery-1.9.0.min.js"></script>
+
+<script type="text/javascript" src="http://people.staging.secondthought.com/people/nativeadstool/public/assets/nativetemplates/javascripts/tiny.editor.packed.js"></script>
+
+<script type="text/javascript">
+
+	var TextEditor = function(editorID, options) {
+		var self = {};
+		self.editor;
+		
+		var editorData = $("#" +  editorID); 
+		options = $.extend(true, {
+			width:editorData.data("width"),
+			height:editorData.data("height"),
+			textarea_id: editorData.data("textareaid")
+		}, options);
+		
+		
+		self.init = function() {	
+			self.editor = new TINY.editor.edit('editor', {
+				id: options.textarea_id,
+				width: options.width,
+				height: options.height,
+				cssclass: 'tinyeditor',
+				controlclass: 'tinyeditor-control',
+				rowclass: 'tinyeditor-header',
+				dividerclass: 'tinyeditor-divider',
+				controls: ['bold', 'italic', 'underline', 'unformat',  'undo', 'style', '|', 'image', 'link', 'unlink', '|'],		
+				xhtml: true,
+				css:'body{ background-color:#fff;font-family:Arial; font-size:14px; line-height:1.5em;} h1 { font-size:18px;} h2 { font-size:16px; } h3 { font-size:15px;} .errorMessage{ color:red}', 
+				bodyid: 'editor'		
+			});
+			
+			if($("#" + options.textarea_id).length > 0) {
+				$("input[type=submit]").click(function() {
+					self.editor.post();	
+				});
+			}
+			
+		};
+		
+		return self;
+	}
+
+	$(function(){
+		var textEditor = TextEditor("texteditor_wrapper");
+		textEditor.init();
+	});
+
+</script>
+
+<script type="text/javascript">
+	angular.module("editApp",[])
+	.controller("editCtrl",["$scope",function($scope){
+		$scope.title = "{{post.title}}";
+	}])
+</script>

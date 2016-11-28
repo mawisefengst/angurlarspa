@@ -1,0 +1,31 @@
+<div class="container rounded_table admin_new_box" ng-app>
+
+	<form method="post" action="/newPost" name="frm">
+
+		<h1>{{message}}</h1>
+
+		<div class="form-group">
+
+		   <label>Title</label>
+		   <input type="text" name="title" ng-model="title" class="form-control" required value="{{post.title}}"></input>
+
+		</div>
+
+		<div class="form-group has-error" ng-show="frm.title.$dirty && frm.title.$error.required">
+			  	Please enter your title
+		</div>
+
+		<div class="form-group">
+			<label>Content</label>
+			<textarea row="10" class="form-control" name="content" ng-model="content" required>{{post.content}}</textarea>
+		</div>	
+
+		<div class="form-group has-error" ng-show="frm.content.$dirty && frm.content.$error.required">
+			  	Please enter your content
+		</div>
+
+		<input ng-disabled="frm.$invalid" type="submit" class="btn btn-primary" value="Submit">
+
+	</form>
+
+</div>
