@@ -4,9 +4,9 @@
 
 ```bash
 
-This is a simple Single Page Application with Angular ngroute. 
+This is a simple Single Page Application with Angular, NodeJs/Express, Mysql and Knex. 
 Menu content is from 3rd party API.  There's a proxy service to avoid cross domain issue.
-Place holder content is from lorem ipsum text.
+NodeJs will offer an admin tool to enter multimedia content in a powerful editor. All templates needed from Angurla Router will also be provided by Node.
  
 ```
 
