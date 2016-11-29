@@ -16,6 +16,9 @@ angular.module('sportSystemApp',['underscore','ngRoute'])
 
   //init controller
 	.controller('initCtrl',['$scope','menuFactory',function($scope,menuFactory){
+
+    $scope.active = false;
+    
     menuFactory.getMenu().success(function(menuData){
       $scope.parentMenuList = _.where(menuData,{parentID: -1});
       $scope.childrenMenuList = _.difference(menuData,$scope.parentMenuList);

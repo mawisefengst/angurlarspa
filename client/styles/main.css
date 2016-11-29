@@ -94,13 +94,17 @@ ul.nav ul.nav{
 
 .postBody{
     margin-left: 15px; 
+    margin-bottom: 25px;
 }
 
 .postBody img{
   max-width: 90%;
 }
 
-@media screen and (min-width: 650px) {
+.fusion-footer{
+  margin: 25px 0;
+}
+
 
   .nav li {
     font-family: 'Oswald', sans-serif;
@@ -184,4 +188,92 @@ ul.nav ul.nav{
     display: block;
   }
   
+
+
+@media screen and (max-width: 768px){
+  
+  ul.nav.firstLayer{
+     max-height: 0;
+     overflow: hidden;
+     transition: max-height 1s linear;
+     -webkit-transition: max-height 1s linear;
+  }
+
+  ul.nav.firstLayer.active{
+     max-height: initial;
+  }
+
+  div.hero-unit,.site_content{
+    width: 100%;
+    max-width: 420px;
+    margin-top: 0
+  }
+  .site_header .cms_name{
+    font-size: 16px;
+  }
+  ul.nav{
+    border-radius: 0;
+  }
+  .nav li{
+    width: 100%;
+    height: auto;
+  }
+  .nav li a{
+    border-bottom: 1px solid white;
+  }
+  ul.nav ul.nav{
+    float: left;
+    width: 100%;
+    position: inherit;
+    display: block;
+  }
+  .postBody{
+    margin-right: 15px;
+  }
+
+  .site_header{
+    height: 70px;
+  }
+
+  .site_header .cms_name{
+    margin:0;
+    line-height: 70px;
+  }
+
+  .border-menu {
+    position: absolute;
+    right:20px;
+    top: 20px;
+    padding-left: 1.25em;
+  }
+  .border-menu:before {
+    content: "";
+    position: absolute;
+    top: 0.25em;
+    left: 0;
+    width: 1em;
+    height: 0.125em;
+    border-top: 0.375em double #fff;
+    border-bottom: 0.125em solid #fff;
+  }
+
+  .box-shadow-menu {
+    position: absolute;
+    right:24px;
+    top: 24px;
+    padding-left: 1.25em;
+    z-index: 9999;
+  }
+  .box-shadow-menu:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.25em;
+    width: 1.4em;
+    height: 0.25em;
+    background: #fff;
+    box-shadow: 0 0.4em 0 0 #fff, 0 0.8em 0 0 #fff;
+  }
+
+
 }

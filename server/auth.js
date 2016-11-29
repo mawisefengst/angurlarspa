@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt-nodejs");
 router
     .get("/admin",function(req,res,next){
       //res.sendFile(__dirname + "/templates/userLogin.html");
-      res.render("userSignup",{"message": "Admin Tool"});
+      res.render("userSignIn",{"message": "Admin Tool"});
     })
 
     .post("/admin",function(req,res,next){
@@ -19,7 +19,7 @@ router
             req.session.uid = user.uid;
             res.redirect("/posts");
           }else{
-            res.render("userSignup",{"message": "Admin Tool", "errorMessage": "Please enter valid username and password"});
+            res.render("userSignIn",{"message": "Admin Tool", "errorMessage": "Please enter valid username and password"});
           }
     		}
     		else  res.render("userSignup",{"message": "Admin Tool", "errorMessage": "Please enter valid username and password"});
@@ -27,7 +27,8 @@ router
     })
    
     .get("/signup",function(req,res,next){
-      res.sendFile(__dirname + "/templates/userSignup.html");
+      //res.sendFile(__dirname + "/templates/userSignup.html");
+       res.render("userSignup",{"message": "User Registration"});
     })
 
     .post("/signup",function(req,res,next){

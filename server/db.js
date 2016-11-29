@@ -1,5 +1,5 @@
 const knex = require("knex");
-/*const db = knex({
+const db = knex({
 	client: "mysql",
 	connection:{
 		host: "localhost",
@@ -7,9 +7,9 @@ const knex = require("knex");
 		password:"201131",
 		database:"ss_spa"
 	}
-});*/
+});
 
-
+/*
 const db = knex({
 	client: "mysql",
 	connection:{
@@ -19,5 +19,6 @@ const db = knex({
 		database:"heroku_be87c02e2444534"
 	}
 });
+*/
 
 module.exports = db;

@@ -9,7 +9,6 @@ const handlebars = require("express-handlebars");
 const request = require("request");
 
 app
-	//set template engine
    .engine("hbs",handlebars({
    		extname: "hbs",
    		defaultLayout: "layout",

@@ -10,21 +10,19 @@
     <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
   </head>
-  <body>
+  <body ng-app="sportSystemApp"  ng-controller="initCtrl">
 
     <div class="site_header">
 
-        <div class="site_content">
-
           <div class="cms_name">Single Page Application Content Tool</div>
 
-        </div>
+          <div class="box-shadow-menu" ng-click="active = !active"></div>
 
     </div>
 
-    <div class="hero-unit" ng-app="sportSystemApp">
-        <div ng-controller="initCtrl">
-            <ul class="nav">
+    <div class="hero-unit" >
+        <div>
+            <ul class="nav firstLayer" ng-class={'active':active}>
                 <li ng-repeat="menu in parentMenuList">
                   <a href="/#/{{menu.name | lowercase }}">{{menu.name}}</a>
                   <ul class="nav">
@@ -36,7 +34,14 @@
             </ul>
         </div>
         <div class="rounded_table" ng-view=""></div>
-    </div>
+        <div class="fusion-footer">         
+            Single Page Application Powered by AngualrJs, ExpressJs and MySQL| 
+             <b>copyright 2016</b>
+   
+        </div>    
+
+     </div>
+
     
     <script src="scripts/libs.js"></script>
     <script src="scripts/main.js"></script>

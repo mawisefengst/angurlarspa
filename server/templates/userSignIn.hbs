@@ -1,7 +1,7 @@
 
 	<div class="container rounded_table admin_loginbox" ng-app>
 
-		<form method="post" action="/signup" name="frm">
+		<form method="post" action="/admin" name="frm">
 
 			<h1>{{message}}</h1>
 
@@ -25,9 +25,6 @@
 			  	Please enter your password
 			</div>
 
-			<div class="form-group ">
-				<label>Confirm Password</label><input type="password" class="form-control" ng-model="user.confirm_password" name="confirm_password" required/></input>
-			</div>	
 
 			<div class="form-group has-error">
 			  	{{{errorMessage}}}
@@ -36,6 +33,8 @@
 			<div class="form-group">
 				<input ng-disabled="frm.$invalid" type="submit" class="btn btn-primary" value="Login">
 			</div>	
+
+			<p>Please contact admin via <a href="mailto:mawisefeng@gmail.com">mawisefeng@gmail.com</a> for new user request</p>
 
 		</form>
 
