@@ -3,6 +3,6 @@ Menu content is from 3rd party API.  There's a proxy service to avoid cross doma
 NodeJs will offer an admin tool to enter multimedia content in a powerful editor. 
 All templates needed from Angurla Router will also be provided by Node.
  
- +Please check live demo: https://angurlarspa.herokuapp.com/
+ +Please Deployed App: https://angurlarspa.herokuapp.com/
 
 
