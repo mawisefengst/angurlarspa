@@ -12,17 +12,19 @@
   </head>
   <body ng-app="sportSystemApp"  ng-controller="initCtrl">
 
+   <div class="site_top_nav">
+        <div class="col"><img src="images/u502.png" class="statusImg" />System Status</div>
+        <div class="col"><img src="images/u506.png" class="statusImg" />Preview Front-End</div>
+        <div class="login"><img src="images/u508.png" class="statusImg" />John Smith(JoSmith) <a href="">Logout</a></div>
+   </div>
+
     <div class="site_header">
 
-          <div class="cms_name">Single Page Application Content Tool</div>
+          <img src="images/logo.png" class="logo" />
 
           <div class="box-shadow-menu" ng-click="active = !active"></div>
 
-    </div>
-
-    <div class="hero-unit" >
-        <div>
-            <ul class="nav firstLayer" ng-class={'active':active}>
+           <ul class="nav firstLayer" ng-class={'active':active}>
                 <li ng-repeat="menu in parentMenuList">
                   <a href="/#/{{menu.name | lowercase }}">{{menu.name}}</a>
                   <ul class="nav">
@@ -32,14 +34,24 @@
                   </ul>
                 </li>
             </ul>
-        </div>
+
+            <div class="searchField">
+
+                <input type="email" name="email" ng-model="user.email" class="form-control textField" required/></input>
+
+
+                <input type="submit" class="btn btn-default" value="Search Appliations">
+
+            </div>
+
+    </div>
+
+    <div class="hero-unit" >
         <div class="rounded_table" ng-view=""></div>
         <div class="fusion-footer">         
             Single Page Application Powered by AngualrJs, ExpressJs and MySQL| 
              <b>copyright 2016</b>
-   
         </div>    
-
      </div>
 
     

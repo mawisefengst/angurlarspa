@@ -1,9 +1,9 @@
 body {
   background: #fafafa;
-  font-family: Helvetica, sans-serif;
+  font-family: arial;
   color: #333;
 }
-
+/*
 @font-face{
     font-family:"Cervo W01 Regular";
     src:url("../fonts/0737e7d3-280b-4ed6-bb9e-1ca0c5722c38.eot?#iefix");
@@ -22,14 +22,14 @@ body {
         url("../fonts/5577bcf0-20e0-473d-9315-29f3bebf47e1.woff") format("woff"),
         url("../fonts/b4e1ca8b-2223-4b21-8dfe-99e984de1615.ttf") format("truetype"),
         url("../fonts/a0a267c6-00d0-4a4d-8f9d-c46790abc94b.svg#a0a267c6-00d0-4a4d-8f9d-c46790abc94b") format("svg");
-}
+}*/
 
 .nav>li>a{
   padding: 0 15px
 }
 
 div.hero-unit{
-  width: 900px;
+  width: 1200px;
   max-width: 100%;
   margin: 30px auto 0;
 }
@@ -51,21 +51,79 @@ h1{
     margin: 0px 0;
 }
 
+.site_top_nav{
+  width: 100%;
+  background: #000000;
+  color: #ffffff;
+  height: 30px;
+}
 
-ul.nav {
-  background-color: #6690ae;
-  box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
-  border-radius: 10px;  
+.site_top_nav .col{
+  height: 30px;
+  line-height: 30px;
+  float: left;
+  margin: 0 0 0 34px;
+}
+
+.site_top_nav .login{
+  float: right;
+  margin: 0 34px 0 ;
+   height: 30px;
+  line-height: 30px;
+}
+
+.site_top_nav .login a{
+  color: #ffffff;
+}
+
+.statusImg{
+  height: 13px;
+  margin: 0 6px 0 0;
+}
+
+ul.nav.firstLayer {
   list-style: none;
   text-align: center;
   padding: 0;
-  margin: 0;
+  margin: 0px 0 0 50px;
+  width: 600px;
+  float: left;
 }
 
 ul.nav ul.nav{
   border-radius: inherit;
-  background: #6690ae;
+  background: #f2f2f2;
+  width: 170px;
 }
+
+ul.nav ul.nav li a{
+    color: #cccccc;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    padding: 0 0 0 10px;
+    text-align: left;
+}
+
+.searchField{
+  float: left;
+  width: 500px;
+  margin-top: 15px;
+}
+
+.searchField input.textField{
+  width: 320px;
+  margin-right: 10px;
+  float: left;
+  height: 30px;
+}
+
+.searchField .btn{
+  float: left;
+  color: red;
+  height: 30px;
+}
+
 
 .rounded_table {
     -moz-border-radius: 5px;
@@ -75,8 +133,19 @@ ul.nav ul.nav{
 }
 
 .site_header{
-  width:100%;height:103px;background-color:#242424;
-  -moz-box-shadow:0 0 5px #888;-webkit-box-shadow:0 0 5px#888;box-shadow:0 0 5px #888;
+  width:100%;
+  height:60px;
+  background-color:#2476A8;
+  color:#ffffff;
+  -moz-box-shadow:0 0 5px #888;
+  -webkit-box-shadow:0 0 5px#888;
+  box-shadow:0 0 5px #888;
+}
+
+.logo{
+  height: 40px;
+  margin: 10px 0 0 20px;
+  float: left;
 }
 
 .site_content{width:918px;margin:0px auto;clear:both;min-height:600px;}
@@ -122,7 +191,7 @@ ul.nav ul.nav{
     border-bottom: 1px solid #888;
     text-align: center;
     transition: .3s background-color;
-    font-size: 24px;
+    font-size: 15px;
     font-family: "Cervo W01 Regular";
     color: rgb(255, 255, 255);
     text-transform: uppercase;
@@ -130,8 +199,8 @@ ul.nav ul.nav{
   }
 
   .nav > li:hover > a,.nav > a:hover {
-    color: #6690ae;
-    background: #fff;
+    color: #ffffff;
+    background: #86e2ff;
   }
 
   .nav > a:hover {
@@ -152,13 +221,13 @@ ul.nav ul.nav{
 
 
   .nav li {
-    width: 170px;
     border-bottom: none;
-    height: 50px;
-    line-height: 50px;
+    height: 60px;
+    line-height: 60px;
     font-size: 1.4em;
     display: inline-block;
-    margin-right: -4px;
+    margin-right: 20px;
+    float: left;
   }
 
   .nav a {
@@ -178,6 +247,7 @@ ul.nav ul.nav{
     position: absolute;
     display: none;
     width: inherit;
+    margin: 0
   }
 
   .nav li:hover ul {
@@ -186,6 +256,14 @@ ul.nav ul.nav{
 
   .nav li ul li {
     display: block;
+    height: 30px;
+    border-bottom: 1px solid #0168AB;
+    width: 100%;
+  }
+
+  .nav li ul li:hover {
+    height: 30px;
+    background-color: #86e2ff;
   }
   
 

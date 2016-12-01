@@ -23,6 +23,7 @@ angular.module('sportSystemApp',['underscore','ngRoute'])
       $scope.parentMenuList = _.where(menuData,{parentID: -1});
       $scope.childrenMenuList = _.difference(menuData,$scope.parentMenuList);
     });
+    
 	}])
 
   //factory to get menu from proxy, failed to load data directly due to 'Access-Control-Allow-Origin'
