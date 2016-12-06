@@ -16,9 +16,7 @@ angular.module('sportSystemApp',['underscore','ngRoute'])
 
   //init controller
 	.controller('initCtrl',['$scope','menuFactory',function($scope,menuFactory){
-
     $scope.active = false;
-    
     menuFactory.getMenu().success(function(menuData){
       $scope.parentMenuList = _.where(menuData,{parentID: -1});
       $scope.childrenMenuList = _.difference(menuData,$scope.parentMenuList);
@@ -40,6 +38,20 @@ angular.module('sportSystemApp',['underscore','ngRoute'])
          return menuFactory;
     }])
 
+  //directive to check finished event
+
+  .directive("myRepeatDirective",function(){
+    return{
+      restrict : "E",
+      link: function($scope,$element,$attr){
+         if($scope.$last){
+            console.log("finished");
+         }
+      }
+    }
+  })
+
+  //filter to remove space
   .filter('removeSpaces', [function() {
     return function(string) {
         if (!angular.isString(string)) {

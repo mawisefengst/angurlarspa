@@ -28,9 +28,6 @@ app
   // .use("/templates", express.static(__dirname + "/client/templates"))
    .get("/",function(req,res,next){
       res.sendFile(__dirname + "/client/index.html");
-		  //res.send(req.session);
-   		//if(req.session.username) res.redirect("/posts");
-   		//else res.sendFile(__dirname + "/templates/user.html");
     })
    .get('/service', function (_, res) { 
 		var url = "https://stagingsecure.sportssystems.com/ssapi/index.cfm/menu";

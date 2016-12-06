@@ -93,7 +93,7 @@ ul.nav.firstLayer {
 ul.nav ul.nav{
   border-radius: inherit;
   background: #f2f2f2;
-  width: 170px;
+  width: 240px;
 }
 
 ul.nav ul.nav li a{
@@ -105,10 +105,23 @@ ul.nav ul.nav li a{
     text-align: left;
 }
 
+.site_header{
+  width:100%;
+  height:60px;
+  background-color:#2476A8;
+  color:#ffffff;
+  -moz-box-shadow:0 0 5px #888;
+  -webkit-box-shadow:0 0 5px#888;
+  box-shadow:0 0 5px #888;
+  position: relative;
+}
+
+
 .searchField{
-  float: left;
   width: 500px;
-  margin-top: 15px;
+  position: absolute;
+  right: 10px;
+  top:15px;
 }
 
 .searchField input.textField{
@@ -124,22 +137,11 @@ ul.nav ul.nav li a{
   height: 30px;
 }
 
-
 .rounded_table {
     -moz-border-radius: 5px;
     border-radius: 5px;
     border: 1px solid #c5c5c5;
     background-color: #fafafa;
-}
-
-.site_header{
-  width:100%;
-  height:60px;
-  background-color:#2476A8;
-  color:#ffffff;
-  -moz-box-shadow:0 0 5px #888;
-  -webkit-box-shadow:0 0 5px#888;
-  box-shadow:0 0 5px #888;
 }
 
 .logo{
