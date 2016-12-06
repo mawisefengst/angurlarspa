@@ -24,15 +24,16 @@
 
           <div class="box-shadow-menu" ng-click="active = !active"></div>
 
-           <ul class="nav firstLayer" ng-class={'active':active}>
-                <li ng-repeat="menu in parentMenuList">
-                  <a href="/#/{{menu.name | lowercase }}">{{menu.name}}</a>
-                  <ul class="nav">
-                    <li ng-repeat="menuChildren in childrenMenuList" ng-if="menuChildren.parentID == menu.id" >
-                      <a href="/#/{{menuChildren.name | lowercase  | removeSpaces}}">{{menuChildren.name}}</a>
-                    </li>
-                  </ul>
-                </li>
+            <ul class="nav firstLayer" ng-class={'active':active} >
+              <li ng-repeat="menu in parentMenuList" ng-controller="ItemController">
+                <a ng-click="closeNav();"closeNav href="/#/{{menu.name | lowercase }}">{{menu.name}}</a>
+                <ul class="nav" ng-class="{'active':showNestedNav} ">
+                  <li ng-repeat="menuChildren in childrenMenuList" ng-if="menuChildren.parentID == menu.id" my-repeat-directive>
+                    <a ng-click="closeNav();" href="/#/{{menuChildren.name | lowercase  | removeSpaces}}">{{menuChildren.name}}</a>
+                  </li>
+                </ul>
+                <div class="arrowDown arrow-down" ng-show="hasChildren" ng-click="showNestList(menu.id);"></div>
+              </li>
             </ul>
 
             <div class="searchField">

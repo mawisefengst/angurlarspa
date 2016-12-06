@@ -221,7 +221,6 @@ ul.nav ul.nav li a{
     font-size: .8em;
   }
 
-
   .nav li {
     border-bottom: none;
     height: 60px;
@@ -247,7 +246,6 @@ ul.nav ul.nav li a{
   /* Sub Menus */
   .nav li ul {
     position: absolute;
-    display: none;
     width: inherit;
     margin: 0
   }
@@ -271,16 +269,57 @@ ul.nav ul.nav li a{
 
 
 @media screen and (max-width: 768px){
+
+  .arrow-down {
+    width: 0; 
+    height: 0; 
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 9px solid #ffffff;
+  }
+
+
+  ul.firstLayer > li{
+    position: relative;
+  }
   
+  ul.firstLayer > li > .arrowDown{
+    content: 'X';
+    color: #959595;
+    display: block;
+    font-size: 1rem;
+    font-weight: 100;
+    position: absolute;
+    right: 7px;
+    top: 12px;
+  }
+
+
+  .searchField{
+    display: none;
+  }  
+
+  .logo{
+    margin: 10px 0 0 10px;
+  }
+
   ul.nav.firstLayer{
+     max-width: 100%;
      max-height: 0;
      overflow: hidden;
-     transition: max-height 1s linear;
-     -webkit-transition: max-height 1s linear;
+     margin: 0;
+     position: absolute;
+     top: 70px;
+     z-index: 500;
+     background: #000000;
+     -webkit-transition: max-height 0.5s ease-in-out;
+     -moz-transition: max-height 0.5s ease-in-out;
+     -o-transition: max-height 0.5s ease-in-out;
+     transition: max-height 0.5s ease-in-out;
   }
 
   ul.nav.firstLayer.active{
-     max-height: initial;
+     max-height: 500px;
   }
 
   div.hero-unit,.site_content{
@@ -295,8 +334,15 @@ ul.nav ul.nav li a{
     border-radius: 0;
   }
   .nav li{
-    width: 100%;
+    width: 98%;
     height: auto;
+    margin-left: 1%;
+  }
+  ul.firstLayer li > a{
+    color: #cccccc;
+    padding-left: 10px;
+    line-height: 30px;
+    text-align: left;
   }
   .nav li a{
     border-bottom: 1px solid white;
@@ -305,7 +351,15 @@ ul.nav ul.nav li a{
     float: left;
     width: 100%;
     position: inherit;
-    display: block;
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.5s ease-in-out;
+    -moz-transition: max-height 0.5s ease-in-out;
+    -o-transition: max-height 0.5s ease-in-out;
+    transition: max-height 0.5s ease-in-out;
+  }
+  ul.nav ul.nav.active{
+    max-height: 500px;
   }
   .postBody{
     margin-right: 15px;
@@ -343,7 +397,10 @@ ul.nav ul.nav li a{
     top: 24px;
     padding-left: 1.25em;
     z-index: 9999;
+    width: 20px;
+    height: 20px;
   }
+
   .box-shadow-menu:before {
     content: "";
     position: absolute;

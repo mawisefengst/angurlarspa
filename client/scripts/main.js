@@ -17,12 +17,23 @@ angular.module('sportSystemApp',['underscore','ngRoute'])
   //init controller
 	.controller('initCtrl',['$scope','menuFactory',function($scope,menuFactory){
     $scope.active = false;
+    $scope.hasChildren = false;
     menuFactory.getMenu().success(function(menuData){
       $scope.parentMenuList = _.where(menuData,{parentID: -1});
       $scope.childrenMenuList = _.difference(menuData,$scope.parentMenuList);
     });
-    
 	}])
+
+  .controller("ItemController",['$scope', function($scope){
+      $scope.showNestedNav = false;
+      $scope.showNestList = function(){
+         $scope.showNestedNav = !$scope.showNestedNav;
+      };
+
+      $scope.closeNav = function(){
+         $scope.$parent.$parent.active = false;
+      };
+  }])
 
   //factory to get menu from proxy, failed to load data directly due to 'Access-Control-Allow-Origin'
   .factory("menuFactory",["$http",function($http){
@@ -42,10 +53,11 @@ angular.module('sportSystemApp',['underscore','ngRoute'])
 
   .directive("myRepeatDirective",function(){
     return{
-      restrict : "E",
+      restrict : "A",
+      scope: false,
       link: function($scope,$element,$attr){
-         if($scope.$last){
-            console.log("finished");
+         if($scope.menuChildren.parentID == $scope.menu.id) {
+            $scope.$parent.$parent.$parent.hasChildren = true;
          }
       }
     }
