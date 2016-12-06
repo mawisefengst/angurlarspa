@@ -274,7 +274,7 @@ ul.nav ul.nav li a{
   .nav a{
         width: 92%;
   }
-  
+
   .arrow-down {
     width: 0; 
     height: 0; 
@@ -305,7 +305,7 @@ ul.nav ul.nav li a{
   }  
 
   .logo{
-    margin: 10px 0 0 10px;
+    position: absolute;
   }
 
   ul.nav.firstLayer{
