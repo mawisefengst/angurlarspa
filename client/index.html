@@ -24,7 +24,11 @@
 
           <div class="site_header_blue"></div>
 
-          <div class="box-shadow-menu" ng-click="active = !active"></div>
+          <div id="nav-icon1" ng-click="active = !active" ng-class={"open":active}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
 
             <ul class="nav firstLayer" ng-class={'active':active} >
               <li ng-repeat="menu in parentMenuList" ng-controller="ItemController">
