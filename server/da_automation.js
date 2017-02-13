@@ -15,3 +15,12 @@ CREATE TABLE `content` (
   KEY `contentToUser_idx` (`uid`),
   CONSTRAINT `contentToUser` FOREIGN KEY (`uid`) REFERENCES `users` (`uid`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `nps` (
+  `sid` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(45) DEFAULT NULL,
+  `score` int(11) DEFAULT NULL,
+  `text` text,
+  `lastTime` datetime,
+  PRIMARY KEY (`sid`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
