@@ -39,7 +39,6 @@ router
     .post("/newScore",function(req,res,next){
       var dateTime = moment(new Date()).format("YYYY-MM-DD HH:mm:ss");
       //check last survey is less than 90 days, otherewise update recored;
-      console.log(req.body)
       db("nps")
           .where("email",req.body.userEmail)
           .first()
