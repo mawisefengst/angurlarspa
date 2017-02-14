@@ -9,6 +9,11 @@ const handlebars = require("express-handlebars");
 const request = require("request");
 
 app
+   .use(function(req, res, next) {
+       res.header("Access-Control-Allow-Origin", "*");
+       res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+     next();
+   })
    .engine("hbs",handlebars({
    		extname: "hbs",
    		defaultLayout: "layout",
@@ -41,4 +46,4 @@ app
 		    }
 		});
 	})
-   .listen(process.env.PORT || 9000);
+   .listen(process.env.PORT || 9091);

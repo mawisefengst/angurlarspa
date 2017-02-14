@@ -4,8 +4,8 @@ const knex = require("knex");
 	connection:{
 		host: "localhost",
 		user: "root",
-		password:"201131",
-		database:"ss_spa"
+		password:"fengma",
+		database:"nps"
 	}
 });*/
 
